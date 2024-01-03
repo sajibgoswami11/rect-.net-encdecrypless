@@ -1,0 +1,15 @@
+1 >insert into ERP_SYSTEM_USERS_ROLE_MAPPING
+(sys_user_role_id, sys_user_id) values
+(:sys_usr_group_id,:sys_usr_id)
+ 
+2 > select URM.sys_user_role_map_id,SRMM.SYS_MENU_ID
+from erp_system_users_role_mapping URM
+left join ERP_SYSTEM_ROLE_MENU_MAPPING SRMM on URM.SYS_USER_ROLE_ID= SRMM.SYS_USER_ROLE_ID
+where URM.sys_user_id = '2007090100100003'
+
+
+
+
+3 > insert into ERP_USR_ROLE_MENU_MAPPING
+(SYS_USER_ROLE_ID,SYS_USER_ROLE_MAP_ID,sys_menu_id)
+values (:sys_usr_group_id,:usr_role, :menuId) 
